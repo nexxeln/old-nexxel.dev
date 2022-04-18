@@ -18,7 +18,7 @@ const BackToTop: FC = () => {
     <AnimatePresence>
       {showArrow && (
         <motion.div
-          className="fixed flex items-center justify-center p-5 text-xl text-gray-100 bg-gray-900 rounded-full cursor-pointer bottom-8 right-8 dark:bg-gray-100 dark:text-gray-900"
+          className="back-to-top"
           onClick={() => {
             scrollTo({
               top: 0,
