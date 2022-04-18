@@ -1,7 +1,12 @@
 module.exports = {
   content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
+  darkMode: "class",
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ["Barlow"],
+      },
+    },
   },
   plugins: [],
 };
