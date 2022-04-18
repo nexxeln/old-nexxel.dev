@@ -1749,11 +1749,6 @@ quick-lru@^5.1.1:
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
 
-react-detect-click-outside@^1.1.2:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/react-detect-click-outside/-/react-detect-click-outside-1.1.2.tgz#e47e5b850412380d8b3f504dea544ed97ec8c972"
-  integrity sha512-BYavS0DoZ7JzTgCDQiYnh3F8jWr6FONBNWLzpFICbupW3rE4IgPOzeqPn4zO0s1C10kXF8X8xiHe0C+mYSJz5g==
-
 react-dom@18.0.0:
   version "18.0.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-18.0.0.tgz#26b88534f8f1dbb80853e1eabe752f24100d8023"

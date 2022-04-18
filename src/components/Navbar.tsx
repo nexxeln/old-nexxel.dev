@@ -1,8 +1,7 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import NextLink from "next/link";
 import { NextRouter, useRouter } from "next/router";
 import { useTheme } from "next-themes";
-import { useDetectClickOutside } from "react-detect-click-outside";
 import { motion } from "framer-motion";
 import { useSpring, animated } from "react-spring";
 import * as anims from "../animations/index";
@@ -21,9 +20,9 @@ const NavItem: FC<{ href: string; text: string; router: NextRouter }> = ({
           isActive
             ? "font-semibold text-gray-800 dark:text-gray-200"
             : "font-normal text-gray-600 dark:text-gray-400"
-        } sm:inline-block rounded-lg px-1.5 py-1 hover:bg-gray-200 dark:hover:bg-gray-800 transition-all text-lg mr-4 sm:mr-7`}
+        } sm:inline-block rounded-lg hover:text-gray-900 dark:hover:text-gray-50 transition-all text-lg mr-4 sm:mr-7`}
       >
-        <span className="capsize">{text}</span>
+        {text}
       </a>
     </NextLink>
   );
@@ -120,17 +119,18 @@ const Toggle: React.FC = () => {
 
 const Navbar: FC = () => {
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
   const links = ["home", "about", "blog", "guestbook"];
-  const boundary = useDetectClickOutside({
-    onTriggered: () => setIsOpen(false)
-  });
 
   return (
-    <nav className="flex items-center justify-between">
-      <div className="capitalize">
+    <nav className="flex items-center justify-between capitalize">
+      <div className="">
         {links.map((link, index) => (
-          <NavItem href={`/${link}`} text={link} router={router} key={index} />
+          <NavItem
+            href={`/${link}`}
+            text={link.charAt(0).toUpperCase() + link.slice(1)}
+            router={router}
+            key={index}
+          />
         ))}
       </div>
 
