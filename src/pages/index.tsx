@@ -6,6 +6,8 @@ const Home: NextPage = () => {
   return (
     <Wrapper>
       <Intro />
+
+      <h1 className="m-96">helllo</h1>
     </Wrapper>
   );
 };
