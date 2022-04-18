@@ -70,6 +70,16 @@ const Intro: FC = () => {
 
         <Links />
       </motion.div>
+
+      <motion.div variants={anims.Pfp} className="hidden sm:block">
+        <Image
+          src="https://avatars.githubusercontent.com/u/95541290?v=4"
+          alt="pfp"
+          width={150}
+          height={150}
+          className="rounded-full"
+        />
+      </motion.div>
     </motion.div>
   );
 };
