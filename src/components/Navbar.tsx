@@ -28,7 +28,7 @@ const NavItem: FC<{ href: string; text: string; router: NextRouter }> = ({
   );
 };
 
-const Toggle: React.FC = () => {
+const ToggleMode: React.FC = () => {
   const { theme, setTheme } = useTheme();
 
   const properties = {
@@ -135,7 +135,7 @@ const Navbar: FC = () => {
       </div>
 
       <div className="flex items-center">
-        <Toggle />
+        <ToggleMode />
       </div>
     </nav>
   );
