@@ -28,20 +28,12 @@ const Footer: FC = () => {
         <div className="flex flex-col w-1/3">
           {[
             {
-              link: "/ama",
-              text: "ama"
+              link: "/guestbook",
+              text: "Guestbook"
             },
             {
               link: "/stats",
-              text: "stats"
-            },
-            {
-              link: "/uses",
-              text: "uses"
-            },
-            {
-              link: "/rss.xml",
-              text: "RSS"
+              text: "Stats"
             }
           ].map((link, index) => (
             <Link passHref href={link.link.toLowerCase()} key={index}>
