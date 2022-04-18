@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { FiGithub, FiMail } from "react-icons/fi";
 import * as anims from "../animations/index";
+import Wavy from "../animations/Wavy";
 
 const Links: FC = () => {
   return (
@@ -56,6 +57,12 @@ const Intro: FC = () => {
         >
           Shoubhit Dash
         </motion.h1>
+
+        <Wavy
+          text="Highschooler. Developer."
+          heading="p"
+          className="mt-3 mb-10 text-xl text-gray-900 dark:text-white"
+        />
       </motion.div>
     </motion.div>
   );
