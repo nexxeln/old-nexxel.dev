@@ -59,10 +59,16 @@ const Intro: FC = () => {
         </motion.h1>
 
         <Wavy
-          text="Highschooler. Developer."
+          text="Highschooler and Developer"
           heading="p"
           className="mt-3 mb-10 text-xl text-gray-900 dark:text-white"
         />
+
+        <motion.p className="mr-20 text-xl" variants={anims.Fade}>
+          16 yo self-taught developer, trying to make the world a cooler place
+        </motion.p>
+
+        <Links />
       </motion.div>
     </motion.div>
   );
