@@ -9,9 +9,11 @@ const Wrapper: FC<{ children: ReactNode }> = ({ children }) => {
         <div className="px-5">
           <Navbar />
         </div>
+
         <div className="px-5 pt-8 md:pt-16 lg:pt-16">
           <main id="main">{children}</main>
         </div>
+
         <BackToTop />
       </div>
     </div>
