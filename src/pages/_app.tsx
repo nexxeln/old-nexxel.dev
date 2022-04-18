@@ -9,7 +9,7 @@ function PersonalSite({ Component, pageProps }: AppProps) {
       defaultTheme="dark"
       value={{
         dark: "dark",
-        light: "light",
+        light: "light"
       }}
     >
       <Component {...pageProps} />
