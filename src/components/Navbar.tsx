@@ -123,7 +123,7 @@ const Navbar: FC = () => {
 
   return (
     <nav className="flex items-center justify-between capitalize">
-      <div className="">
+      <div>
         {links.map((link, index) => (
           <NavItem
             href={`/${link}`}
