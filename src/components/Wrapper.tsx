@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react";
+import BackToTop from "./BackToTop";
 import Navbar from "./Navbar";
 
 const Wrapper: FC<{ children: ReactNode }> = ({ children }) => {
@@ -11,6 +12,7 @@ const Wrapper: FC<{ children: ReactNode }> = ({ children }) => {
         <div className="px-5 pt-8 md:pt-16 lg:pt-16">
           <main id="main">{children}</main>
         </div>
+        <BackToTop />
       </div>
     </div>
   );
