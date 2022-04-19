@@ -6,6 +6,10 @@
   @apply box-border p-0 m-0;
 }
 
+main-root {
+  font-family: "Barlow", sans-serif;
+}
+
 html, body {
   @apply font-sans;
   scroll-behavior: smooth;

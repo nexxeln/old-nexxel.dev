@@ -46,17 +46,16 @@ const ProjectCard: FC<ProjectCardProps> = ({
         <div className="flex flex-col gap-1 px-4">
           <h2 className="py-1 text-2xl text-center">{name}</h2>
           <p>{description}</p>
-          <div className=""></div>
           <p className="flex items-center gap-2 text-sm">
             <span style={{ color: color }}>⬤</span> <span>{language}</span>
           </p>
           <p className="flex items-center gap-2 text-sm">
             <FiStar />
-            <p>{stars}</p>
+            <span>{stars}</span>
           </p>
           <p className="flex items-center gap-2 text-sm">
             <VscRepoForked />
-            <p>{forks}</p>
+            <span>{forks}</span>
           </p>
         </div>
       </a>
