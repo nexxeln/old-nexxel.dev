@@ -16,7 +16,7 @@ const Footer: FC = () => {
               text: "About"
             },
             {
-              link: "/blog",
+              link: "https://blog.nexxel.dev",
               text: "Blog"
             }
           ].map((link, index) => (
