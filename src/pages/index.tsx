@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Header from "../components/Header";
 import Intro from "../components/Intro";
 import ProjectCard from "../components/ProjectCard";
 import Wrapper from "../components/Wrapper";
@@ -8,6 +9,7 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC }: any) => {
     <>
       <Wrapper>
         <Intro />
+        <Header head="Projects" />
         <div className="flex flex-col items-center gap-6">
           <ProjectCard
             name={genLicense.name}
