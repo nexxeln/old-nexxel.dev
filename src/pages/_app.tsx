@@ -12,20 +12,23 @@ function PersonalSite({ Component, pageProps }: AppProps) {
   if (!showChild) {
     return null;
   }
+
   if (typeof window === "undefined") {
     return <></>;
   } else {
     return (
-      <ThemeProvider
-        attribute="class"
-        defaultTheme="dark"
-        value={{
-          dark: "dark",
-          light: "light"
-        }}
-      >
-        <Component {...pageProps} />
-      </ThemeProvider>
+      <div className="font-sans">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          value={{
+            dark: "dark",
+            light: "light"
+          }}
+        >
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </div>
     );
   }
 }
