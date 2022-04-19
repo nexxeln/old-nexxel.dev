@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import Header from "../components/Header";
 import Intro from "../components/Intro";
 import ProjectCard from "../components/ProjectCard";
+import ViewMoreBtn from "../components/ViewMoreBtn";
 import Wrapper from "../components/Wrapper";
 
 const Home: NextPage = ({ nexdle, genLicense, spotifyVC }: any) => {
@@ -35,6 +36,7 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC }: any) => {
             stars={nexdle.stargazers_count}
             link={nexdle.name}
           />
+          <ViewMoreBtn text="View more" href="https://github.com/nexxeln" />
         </div>
       </Wrapper>
     </>
