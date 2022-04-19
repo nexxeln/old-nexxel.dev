@@ -16,7 +16,7 @@ const ViewMoreBtn: FC<ViewMoreBtnProps> = ({ text, href }) => {
         className="flex items-center"
       >
         {text}{" "}
-        <FiChevronRight className="mt-1 ml-1 transition-all group-hover:translate-x-1" />
+        <FiChevronRight className="mt-1 ml-1 transition-all duration-200 group-hover:translate-x-1" />
       </a>
     </button>
   );
