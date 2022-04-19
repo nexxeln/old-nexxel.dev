@@ -24,13 +24,16 @@ const Links: FC = () => {
             href={link.href}
             target="_blank"
             rel="noreferrer"
-            className="mr-5"
+            className="mr-5 text-gray-600 dark:text-gray-400"
             whileHover={{ scale: 1.2 }}
             whileTap={{ scale: 0.8 }}
             variants={anims.Fade}
             aria-label={link.icon.toString()}
           >
-            <link.icon size={22} />
+            <link.icon
+              size={22}
+              className="dark:hover:text-white hover:text-black"
+            />
           </motion.a>
         </Link>
       ))}
@@ -64,8 +67,12 @@ const Intro: FC = () => {
           className="mt-3 mb-10 text-xl text-gray-900 dark:text-white"
         />
 
-        <motion.p className="mr-20 text-xl" variants={anims.Fade}>
-          16 yo self-taught developer, trying to make the world a cooler place
+        <motion.p
+          className="mr-20 text-xl text-gray-600 dark:text-gray-400"
+          variants={anims.Fade}
+        >
+          16 yo self-taught developer, trying to make the world a cooler place{" "}
+          and stuff like that
         </motion.p>
 
         <Links />
