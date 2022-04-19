@@ -12,6 +12,9 @@ const NavItem: FC<{ href: string; text: string; router: NextRouter }> = ({
   router
 }) => {
   const isActive = router.pathname === (href === "/home" ? "/" : href);
+  if (href === "/blog") {
+    href = "https://blog.nexxel.dev";
+  }
 
   return (
     <NextLink href={href === "/home" ? "/" : href}>
