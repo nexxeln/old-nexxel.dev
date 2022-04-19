@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "axios": "^0.26.1",
     "framer-motion": "^6.3.0",
     "grapheme-splitter": "^1.0.4",
     "next": "12.1.5",
