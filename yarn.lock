@@ -44,6 +44,11 @@
     minimatch "^3.0.4"
     strip-json-comments "^3.1.1"
 
+"@fontsource/barlow@^4.5.6":
+  version "4.5.6"
+  resolved "https://registry.yarnpkg.com/@fontsource/barlow/-/barlow-4.5.6.tgz#056516370e79ab2cf2d0d326d34d2e136f4858f6"
+  integrity sha512-T7ixL3eNfxSv0Gqo1/kCIQQdv1t3+FwbEEt6ug7or/OArKDO7NBo6OGfv/7J1cYS6cDDLkaYETPsiJCja5lFcQ==
+
 "@humanwhocodes/config-array@^0.9.2":
   version "0.9.5"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.9.5.tgz#2cbaf9a89460da24b5ca6531b8bbfc23e1df50c7"

@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap'); */
 
 * {
   @apply box-border p-0 m-0;
@@ -12,10 +12,9 @@
   font-family: "Barlow", sans-serif;
 } */
 
-
-
 html, body {
-  font-family: 'Barlow', sans-serif;
+  /* font-family: 'Barlow', sans-serif; */
+  font-family: "Barlow";
   scroll-behavior: smooth;
 }
 
@@ -37,4 +36,8 @@ html, body {
 
 .footer-links {
   @apply my-2 text-lg text-gray-500 transition-colors duration-300 cursor-pointer w-fit hover:text-black dark:hover:text-white;
+}
+
+.name {
+  font-weight: 200;
 }

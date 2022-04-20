@@ -55,7 +55,7 @@ const Intro: FC = () => {
         animate="visible"
       >
         <motion.h1
-          className="h-16 pt-2 text-5xl font-bold w-fit"
+          className="h-16 pt-2 text-5xl name w-fit"
           variants={anims.Fade}
         >
           Shoubhit Dash

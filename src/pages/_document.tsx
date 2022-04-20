@@ -5,11 +5,11 @@ export default class PortfolioDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <link
+          {/* <link
             href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap"
             rel="stylesheet"
             as="font"
-          />
+          /> */}
         </Head>
         <body>
           <Main />
