@@ -10,8 +10,10 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC }: any) => {
     <>
       <Wrapper>
         <Intro />
-        <Header head="Projects" />
-        <div className="flex flex-col items-center gap-6">
+        <div className="pb-8 mt-96">
+          <Header head="Some of my projects" />
+        </div>
+        <div className="flex flex-col items-center gap-10">
           <ProjectCard
             name={genLicense.name}
             language={genLicense.language}
