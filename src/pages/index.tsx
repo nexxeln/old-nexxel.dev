@@ -10,10 +10,10 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC }: any) => {
     <>
       <Wrapper>
         <Intro />
-        <div className="pt-6 pb-8 mt-96">
+        <div className="pt-6 pb-8 text-center mt-96">
           <Header head="Some of my projects" />
         </div>
-        <div className="flex flex-col items-center gap-10">
+        <div className="flex flex-col gap-10">
           <ProjectCard
             name={genLicense.name}
             language={genLicense.language}
@@ -21,6 +21,7 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC }: any) => {
             forks={genLicense.forks}
             stars={genLicense.stargazers_count}
             link={genLicense.name}
+            align="left"
           />
           <ProjectCard
             name={spotifyVC.name}
@@ -29,6 +30,7 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC }: any) => {
             forks={spotifyVC.forks}
             stars={spotifyVC.stargazers_count}
             link={spotifyVC.name}
+            align="right"
           />
           <ProjectCard
             name={nexdle.name}
@@ -37,8 +39,11 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC }: any) => {
             forks={nexdle.forks}
             stars={nexdle.stargazers_count}
             link={nexdle.name}
+            align="left"
           />
-          <ViewMoreBtn text="View more" href="https://github.com/nexxeln" />
+          <div className="self-center">
+            <ViewMoreBtn text="View more" href="https://github.com/nexxeln" />
+          </div>
         </div>
       </Wrapper>
     </>
