@@ -17,7 +17,7 @@ function PersonalSite({ Component, pageProps }: AppProps) {
   //   return <></>;
   // } else {
   return (
-    <div className="main-root">
+    <div className="">
       <ThemeProvider
         attribute="class"
         defaultTheme="dark"

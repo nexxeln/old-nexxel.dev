@@ -2,16 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap');
+
 * {
   @apply box-border p-0 m-0;
 }
 
-main-root {
+/* main-root {
   font-family: "Barlow", sans-serif;
-}
+} */
+
+
 
 html, body {
-  @apply font-sans;
+  font-family: 'Barlow', sans-serif;
   scroll-behavior: smooth;
 }
 

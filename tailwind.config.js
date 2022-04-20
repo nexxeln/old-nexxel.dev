@@ -3,7 +3,7 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      sans: ["Barlow", "regular"]
+      sans: ["Barlow"]
     }
   },
   plugins: []
