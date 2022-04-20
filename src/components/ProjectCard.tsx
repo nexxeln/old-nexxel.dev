@@ -41,7 +41,7 @@ const ProjectCard: FC<ProjectCardProps> = ({
         href={`https://github.com/nexxeln/${link}`}
         rel="noreferrer"
         target="_blank"
-        className="flex flex-col justify-center w-3/5 pb-2 border-4 rounded-xl hover:scale-[1.02] transition-all duration-200"
+        className="flex flex-col w-3/5 pb-2 border-4 rounded-xl hover:scale-[1.02] transition-all duration-200"
       >
         <div className="flex flex-col gap-1 px-4">
           <h2 className="py-1 text-2xl text-center">{name}</h2>
