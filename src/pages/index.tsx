@@ -5,7 +5,7 @@ import ProjectCard from "../components/ProjectCard";
 import ViewMoreBtn from "../components/ViewMoreBtn";
 import Wrapper from "../components/Wrapper";
 
-const Home: NextPage = ({ nexdle, genLicense, spotifyVC }: any) => {
+const Home: NextPage = ({ nexdle, genLicense, spotifyVC, remixBlog }: any) => {
   return (
     <>
       <Wrapper>
@@ -24,22 +24,31 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC }: any) => {
             align="left"
           />
           <ProjectCard
-            name={spotifyVC.name}
-            language={spotifyVC.language}
-            description={spotifyVC.description}
-            forks={spotifyVC.forks}
-            stars={spotifyVC.stargazers_count}
-            link={spotifyVC.name}
-            align="right"
-          />
-          <ProjectCard
             name={nexdle.name}
             language={nexdle.language}
             description={nexdle.description}
             forks={nexdle.forks}
             stars={nexdle.stargazers_count}
             link={nexdle.name}
+            align="right"
+          />
+          <ProjectCard
+            name={spotifyVC.name}
+            language={spotifyVC.language}
+            description={spotifyVC.description}
+            forks={spotifyVC.forks}
+            stars={spotifyVC.stargazers_count}
+            link={spotifyVC.name}
             align="left"
+          />
+          <ProjectCard
+            name={remixBlog.name}
+            language={remixBlog.language}
+            description={remixBlog.description}
+            forks={remixBlog.forks}
+            stars={remixBlog.stargazers_count}
+            link={remixBlog.name}
+            align="right"
           />
           <div className="self-center">
             <ViewMoreBtn text="View more" href="https://github.com/nexxeln" />
@@ -74,11 +83,18 @@ export async function getServerSideProps({ req, res }: any) {
     return await res.json();
   });
 
+  const remixBlog = await fetch(
+    "https://api.github.com/repos/nexxeln/remix-blog"
+  ).then(async (res) => {
+    return await res.json();
+  });
+
   return {
     props: {
       nexdle,
       genLicense,
-      spotifyVC
+      spotifyVC,
+      remixBlog
     }
   };
 }
