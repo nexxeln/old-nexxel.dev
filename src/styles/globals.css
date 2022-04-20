@@ -12,7 +12,8 @@
   font-family: "Barlow", sans-serif;
 } */
 
-html, body {
+html,
+body {
   /* font-family: 'Barlow', sans-serif; */
   font-family: "Barlow";
   scroll-behavior: smooth;
