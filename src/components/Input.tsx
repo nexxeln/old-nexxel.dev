@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { server } from "../lib/config";
 
 const Input = () => {
   const [form, setForm] = useState({
@@ -11,7 +12,7 @@ const Input = () => {
     const body = JSON.stringify(form);
 
     try {
-      const response = await fetch("/api/signatures", {
+      const response = await fetch(`${server}/api/signatures`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: body
@@ -21,6 +22,7 @@ const Input = () => {
         console.log("something went wrong");
       } else {
         resetForm();
+        location.reload();
         console.log("success");
       }
     } catch (error) {
