@@ -14,7 +14,9 @@ const about = () => {
           initial="hidden"
           animate="visible"
         >
-          <Header head="About Me" />
+          <div className="pb-4">
+            <Header head="About Me" />
+          </div>
           <Text>
             <motion.div
               variants={anims.FadeContainer}
@@ -123,7 +125,9 @@ const about = () => {
             </motion.div>
           </Text>
           <div className="py-6" />
-          <Header head="About this website" />
+          <div className="pb-6">
+            <Header head="About this website" />
+          </div>
           <Text>
             <motion.div
               className="pt-4"
