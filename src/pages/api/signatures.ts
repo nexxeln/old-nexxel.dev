@@ -21,7 +21,9 @@ async function createSignature(req: NextApiRequest, res: NextApiResponse) {
     const newEntry = await prisma.signatures.create({
       data: {
         name: body.name,
-        message: body.message
+        message: body.message,
+        // @ts-ignore
+        createdAt: new Date()
       }
     });
     return res.status(200).json(newEntry);
@@ -33,7 +35,10 @@ async function createSignature(req: NextApiRequest, res: NextApiResponse) {
 
 async function getSignatures(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const signatures = await prisma.signatures.findMany();
+    const signatures = await prisma.signatures.findMany({
+      // @ts-ignore
+      orderBy: { createdAt: "desc" }
+    });
     return res.status(200).json(signatures);
   } catch (error) {
     console.log("Request error", error);

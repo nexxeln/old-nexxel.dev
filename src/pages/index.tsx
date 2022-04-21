@@ -10,7 +10,7 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC, remixBlog }: any) => {
     <>
       <Wrapper>
         <Intro />
-        <div className="pt-6 pb-14 text-center mt-96">
+        <div className="pt-6 text-center pb-14 mt-96">
           <Header head="Some of my projects" />
         </div>
         <div className="flex flex-col gap-10">
