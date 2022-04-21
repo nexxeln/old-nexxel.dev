@@ -43,7 +43,7 @@ const about = () => {
                 Eventually I got into web development and I love it, the
                 frontend, the backend, all of it. Lately I&apos;ve been dwelling
                 into some Rust and Go as well because I think thats the future.
-                I haven&apos;t gotten a lot into it because frankly I have no
+                I haven&apos;t gotten into it a lot because frankly I have no
                 time.
                 <br />
                 <br />
