@@ -42,3 +42,7 @@ body {
 .name {
   font-weight: bolder;
 }
+
+.text {
+  @apply prose text-gray-600 dark:text-gray-400 md:prose-lg lg:prose-xl dark:prose-invert prose-a:no-underline prose-a:font-medium hover:prose-a:underline hover:prose-a:underline-offset-2 hover:prose-a:transition-all hover:prose-a:duration-300
+}
