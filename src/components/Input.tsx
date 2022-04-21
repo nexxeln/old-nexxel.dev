@@ -50,7 +50,7 @@ const Input = () => {
         onSubmit={(e) => handleSubmit(e)}
         className="w-full"
       >
-        <div className="flex items-center w-full text-lg text-black border-2 border-gray-300 rounded-md dark:text-white dark:border-gray-400">
+        <div className="flex items-center w-full text-sm text-black border-2 border-gray-300 rounded-md md:text-lg dark:text-white dark:border-gray-400">
           <input
             name="name"
             type="text"
