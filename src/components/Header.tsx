@@ -5,7 +5,7 @@ import { FadeContainer, Fade } from "../animations";
 const Header: FC<{ head: string }> = ({ head }) => {
   return (
     <motion.div variants={FadeContainer} initial="hidden" animate="visible">
-      <motion.h1 className="px-2 pb-6 text-4xl font-bold" variants={Fade}>
+      <motion.h1 className="pb-6 text-4xl font-bold" variants={Fade}>
         {head}
       </motion.h1>
     </motion.div>
