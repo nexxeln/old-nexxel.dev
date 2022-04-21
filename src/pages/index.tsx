@@ -59,12 +59,7 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC, remixBlog }: any) => {
   );
 };
 
-export async function getServerSideProps({ req, res }: any) {
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=10, stale-while-revalidate=59"
-  );
-
+export async function getStaticProps() {
   const nexdle = await fetch(
     "https://api.github.com/repos/nexxeln/nexdle"
   ).then(async (res) => {
@@ -95,7 +90,8 @@ export async function getServerSideProps({ req, res }: any) {
       genLicense,
       spotifyVC,
       remixBlog
-    }
+    },
+    revalidate: 60
   };
 }
 
