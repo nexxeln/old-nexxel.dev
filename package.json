@@ -16,6 +16,7 @@
     "@tailwindcss/typography": "^0.5.2",
     "framer-motion": "^6.3.0",
     "grapheme-splitter": "^1.0.4",
+    "kbar": "^0.1.0-beta.34",
     "next": "12.1.5",
     "next-themes": "^0.1.1",
     "react": "18.0.0",

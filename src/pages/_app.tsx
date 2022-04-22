@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import "@fontsource/barlow";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
+import { KBarProvider } from "kbar";
 // import { useEffect, useState } from "react";
 
 function PersonalSite({ Component, pageProps }: AppProps) {
@@ -26,7 +27,9 @@ function PersonalSite({ Component, pageProps }: AppProps) {
         light: "light"
       }}
     >
-      <Component {...pageProps} />
+      <KBarProvider>
+        <Component {...pageProps} />
+      </KBarProvider>
     </ThemeProvider>
   );
 }
