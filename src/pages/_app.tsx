@@ -6,6 +6,7 @@ import { Router } from "next/router";
 import { ThemeProvider } from "next-themes";
 import NProgress from "nprogress";
 import { KBarProvider } from "kbar";
+import { MantineProvider } from "@mantine/core";
 import CommandPalette from "../components/CommandPalette";
 import actions from "../lib/actions";
 // import { useEffect, useState } from "react";
@@ -38,15 +39,17 @@ function PersonalSite({ Component, pageProps }: AppProps) {
         light: "light"
       }}
     >
-      <KBarProvider
-        options={{
-          enableHistory: true
-        }}
-        actions={actions}
-      >
-        <CommandPalette />
-        <Component {...pageProps} />
-      </KBarProvider>
+      <MantineProvider withNormalizeCSS>
+        <KBarProvider
+          options={{
+            enableHistory: true
+          }}
+          actions={actions}
+        >
+          <CommandPalette />
+          <Component {...pageProps} />
+        </KBarProvider>
+      </MantineProvider>
     </ThemeProvider>
   );
 }
