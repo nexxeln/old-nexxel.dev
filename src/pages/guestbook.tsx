@@ -33,7 +33,7 @@ const guestbook = ({ entries }: any) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const guestbookRef = collection(firestore, "guestbook");
   const q = query(guestbookRef, orderBy("createdAt", "desc"));
   const data = await getDocs(q);
@@ -44,8 +44,7 @@ export async function getStaticProps() {
   return {
     props: {
       entries
-    },
-    revalidate: 1
+    }
   };
 }
 
