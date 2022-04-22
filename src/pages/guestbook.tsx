@@ -3,9 +3,8 @@ import Input from "../components/Input";
 import Signature from "../components/Signature";
 import Text from "../components/Text";
 import Wrapper from "../components/Wrapper";
-import { server } from "../lib/config";
 
-const guestbook = ({ data }: any) => {
+const guestbook = () => {
   return (
     <>
       <Wrapper>
@@ -22,45 +21,10 @@ const guestbook = ({ data }: any) => {
           <Input />
         </div>
         <div className="mt-10" />
-        {data.map((item: any) => (
-          <Signature key={item.id} name={item.name} message={item.message} />
-        ))}
+
+        <Signature name="nexxel" message="lol" />
       </Wrapper>
     </>
   );
 };
-
-export async function getStaticProps() {
-  try {
-    const response = await fetch(`${server}/api/signatures`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json"
-      }
-    });
-
-    if (response.status !== 200) {
-      console.log("something went wrong");
-    } else {
-      const data = await response.json();
-      console.log("success");
-      return {
-        props: {
-          data
-        }
-      };
-    }
-  } catch (error) {
-    console.log("there was an error reading from the database", error);
-    const data: any = [];
-
-    return {
-      props: {
-        data: ["error"]
-      },
-      revalidate: 60
-    };
-  }
-}
-
 export default guestbook;

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { server } from "../lib/config";
 
 const Input = () => {
   const [form, setForm] = useState({
@@ -8,26 +7,7 @@ const Input = () => {
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    const body = JSON.stringify(form);
-
-    try {
-      const response = await fetch(`${server}/api/signatures`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: body
-      });
-
-      if (response.status !== 200) {
-        console.log("something went wrong");
-      } else {
-        resetForm();
-        location.reload();
-        console.log("success");
-      }
-    } catch (error) {
-      console.log("there was an error submitting", error);
-    }
+    // do stuff
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -46,12 +26,7 @@ const Input = () => {
 
   return (
     <>
-      <form
-        action="#"
-        method="POST"
-        onSubmit={(e) => handleSubmit(e)}
-        className="w-full"
-      >
+      <form onSubmit={(e) => handleSubmit(e)} className="w-full">
         <div className="flex items-center w-full text-sm text-black border-2 border-gray-300 rounded-md md:text-lg dark:text-white dark:border-gray-400">
           <input
             name="name"
@@ -73,7 +48,7 @@ const Input = () => {
         <div className="mt-3" />
         <button
           type="submit"
-          className="px-4 py-2 transition-all duration-300 border-2 border-teal-700 rounded-md hover:bg-teal-600 hover:border-teal-600"
+          className="px-4 py-2 text-teal-500 transition-all duration-300 border-2 border-teal-600 rounded-md hover:scale-[1.04]"
         >
           Sign
         </button>
