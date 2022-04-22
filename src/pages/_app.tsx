@@ -39,7 +39,7 @@ function PersonalSite({ Component, pageProps }: AppProps) {
         light: "light"
       }}
     >
-      <MantineProvider withNormalizeCSS>
+      <MantineProvider>
         <KBarProvider
           options={{
             enableHistory: true
