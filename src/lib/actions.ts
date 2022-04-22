@@ -44,7 +44,6 @@ const actions: Action[] = [
   {
     id: "github",
     name: "GitHub",
-    shortcut: ["g", "h"],
     keywords: "gh code",
     perform: () => {
       open("https://github.com/nexxeln", "_blank");
