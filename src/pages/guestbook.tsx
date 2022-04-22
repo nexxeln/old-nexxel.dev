@@ -1,4 +1,4 @@
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { firestore } from "../firebase/clientApp";
 import Header from "../components/Header";
 import Input from "../components/Input";
@@ -35,8 +35,11 @@ const guestbook = ({ entries }: any) => {
 
 export async function getStaticProps() {
   const guestbookRef = collection(firestore, "guestbook");
-  const data = await getDocs(guestbookRef);
-  const entries = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+  const q = query(guestbookRef, orderBy("createdAt", "desc"));
+  const data = await getDocs(q);
+  const entries = JSON.parse(
+    JSON.stringify(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })))
+  );
 
   return {
     props: {

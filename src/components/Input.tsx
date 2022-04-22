@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import { firestore } from "../firebase/clientApp";
 
 const Input = () => {
   const [form, setForm] = useState({
@@ -6,8 +8,19 @@ const Input = () => {
     message: ""
   });
 
+  const guestbookRef = collection(firestore, "guestbook");
+
   const handleSubmit = async (e: React.FormEvent) => {
-    // do stuff
+    e.preventDefault();
+
+    await addDoc(guestbookRef, {
+      name: form.name,
+      message: form.message,
+      createdAt: serverTimestamp()
+    });
+
+    resetForm();
+    location.reload();
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
