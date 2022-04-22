@@ -27,7 +27,8 @@ const guestbook = ({ entries }: any) => {
           return (
             <Signature key={index} name={entry.name} message={entry.message} />
           );
-        })}{" "}
+        })}
+        <div className="mt-48" />
       </Wrapper>
     </>
   );
