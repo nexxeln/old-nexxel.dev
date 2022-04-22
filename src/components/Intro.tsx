@@ -2,6 +2,7 @@ import { FC } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useKBar } from "kbar";
 import { FiGithub, FiMail } from "react-icons/fi";
 import * as anims from "../animations/index";
 import Wavy from "../animations/Wavy";
@@ -42,6 +43,7 @@ const Links: FC = () => {
 };
 
 const Intro: FC = () => {
+  const { query } = useKBar();
   return (
     <motion.div
       className="flex items-start p-2 mmt-20"
@@ -73,6 +75,22 @@ const Intro: FC = () => {
         >
           16 yo self-taught developer, trying to make the world a cooler place{" "}
           and stuff like that
+        </motion.p>
+
+        <motion.p
+          className="hidden mt-10 mr-20 text-xl text-gray-600 dark:text-gray-400 sm:flex"
+          variants={anims.Fade}
+        >
+          Pro Tip: Use
+          <button
+            onClick={query.toggle}
+            style={{ opacity: 1 }}
+            className="mx-2 inline bg-white focus:outline-none dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-500 text-gray-600 dark:text-white text-sm leading-5 py-0.5 px-1.5 border border-gray-500 rounded-md"
+          >
+            <kbd className="font-sans no-underline">⌘</kbd>{" "}
+            <kbd className="font-sans">K</kbd>
+          </button>{" "}
+          to quickly navigate the site.
         </motion.p>
 
         <Links />
