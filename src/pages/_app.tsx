@@ -3,6 +3,7 @@ import "@fontsource/barlow";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import { KBarProvider } from "kbar";
+import CommandPalette from "../components/CommandPalette";
 import actions from "../lib/actions";
 // import { useEffect, useState } from "react";
 
@@ -34,6 +35,7 @@ function PersonalSite({ Component, pageProps }: AppProps) {
         }}
         actions={actions}
       >
+        <CommandPalette />
         <Component {...pageProps} />
       </KBarProvider>
     </ThemeProvider>
