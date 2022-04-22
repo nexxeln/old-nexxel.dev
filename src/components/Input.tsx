@@ -9,35 +9,37 @@ const Input = () => {
   });
 
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const guestbookRef = collection(firestore, "guestbook");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setLoading(true);
 
     if (form.name.length === 0 || form.message.length === 0) {
+      setLoading(false);
       setError("Please fill out all fields.");
       return;
-    }
-
-    if (form.name.length > 50) {
+    } else if (form.name.length > 50) {
+      setLoading(false);
       setError("Name must be less than 50 characters.");
       return;
-    }
-
-    if (form.message.length > 70) {
+    } else if (form.message.length > 70) {
+      setLoading(false);
       setError("Message must be less than 70 characters.");
       return;
+    } else {
+      await addDoc(guestbookRef, {
+        name: form.name,
+        message: form.message,
+        createdAt: serverTimestamp()
+      });
+
+      setLoading(false);
+      resetForm();
+      location.reload();
     }
-
-    await addDoc(guestbookRef, {
-      name: form.name,
-      message: form.message,
-      createdAt: serverTimestamp()
-    });
-
-    resetForm();
-    location.reload();
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
