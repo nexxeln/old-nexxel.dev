@@ -58,9 +58,9 @@ const about: NextPage = () => {
                 >
                   JEE
                 </a>{" "}
-                which is like one of the toughest exams in the world, so most of
-                my time goes into studying for it. I&apos;m hoping to study
-                Computer Science in college.
+                which is an entrance exam for good engineering colleges in
+                India, so most of my time goes into studying for it. I&apos;m
+                hoping to study Computer Science in college.
                 <br />
                 <br />
                 For hobbies other than coding, I really like performing{" "}
@@ -166,13 +166,21 @@ const about: NextPage = () => {
                     >
                       Framer Motion
                     </a>{" "}
-                    and{" "}
+                    ,{" "}
                     <a
                       href="https://tailwindcss.com"
                       rel="noreferrer"
                       target="_blank"
                     >
                       TailwindCSS
+                    </a>{" "}
+                    and{" "}
+                    <a
+                      href="https://firebase.google.com/docs/firestore"
+                      rel="noreferrer"
+                      target="_blank"
+                    >
+                      Firestore
                     </a>
                   </li>
 
