@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { NextPage } from "next";
+import Head from "next/head";
 import * as anims from "../animations/index";
 import Header from "../components/Header";
 import Text from "../components/Text";
@@ -8,6 +9,15 @@ import Wrapper from "../components/Wrapper";
 const about: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Shoubhit Dash | About</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Shoubhit Dash aka nexxel's personal website."
+        />
+      </Head>
       <Wrapper>
         <motion.div
           className="flex flex-col items-start justify-start"

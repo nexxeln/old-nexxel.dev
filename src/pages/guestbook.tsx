@@ -6,10 +6,20 @@ import Signature from "../components/Signature";
 import Text from "../components/Text";
 import Wrapper from "../components/Wrapper";
 import { NextPage } from "next";
+import Head from "next/head";
 
 const guestbook: NextPage = ({ entries }: any) => {
   return (
     <>
+      <Head>
+        <title>Shoubhit Dash | Guestbook</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Shoubhit Dash aka nexxel's personal website."
+        />
+      </Head>
       <Wrapper>
         <div className="pb-3">
           <Header head="Guestbook" size={5} />

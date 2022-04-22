@@ -1,10 +1,17 @@
 import { NextPage } from "next";
+import Head from "next/head";
 import Link from "next/link";
 import Wrapper from "../components/Wrapper";
 
 const fourofour: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>Shoubhit Dash | 404</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="description" content="uh oh broken link" />
+      </Head>
       <Wrapper>
         <div className="text-center my-36">
           <h1 className="text-4xl font-bold">

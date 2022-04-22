@@ -1,4 +1,5 @@
 import type { NextPage } from "next";
+import Head from "next/head";
 import Header from "../components/Header";
 import Intro from "../components/Intro";
 import ProjectCard from "../components/ProjectCard";
@@ -8,6 +9,15 @@ import Wrapper from "../components/Wrapper";
 const Home: NextPage = ({ nexdle, genLicense, spotifyVC, remixBlog }: any) => {
   return (
     <>
+      <Head>
+        <title>Shoubhit Dash | Home</title>
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content="Shoubhit Dash aka nexxel's personal website."
+        />
+      </Head>
       <Wrapper>
         <Intro />
         <div className="pt-6 text-center pb-14 mt-96">
