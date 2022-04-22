@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
+import { NextPage } from "next";
 import * as anims from "../animations/index";
 import Header from "../components/Header";
 import Text from "../components/Text";
 import Wrapper from "../components/Wrapper";
 
-const about = () => {
+const about: NextPage = () => {
   return (
     <>
       <Wrapper>

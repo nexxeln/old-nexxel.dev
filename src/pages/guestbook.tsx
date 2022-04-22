@@ -5,8 +5,9 @@ import Input from "../components/Input";
 import Signature from "../components/Signature";
 import Text from "../components/Text";
 import Wrapper from "../components/Wrapper";
+import { NextPage } from "next";
 
-const guestbook = ({ entries }: any) => {
+const guestbook: NextPage = ({ entries }: any) => {
   return (
     <>
       <Wrapper>
