@@ -3,6 +3,7 @@ import "@fontsource/barlow";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "next-themes";
 import { KBarProvider } from "kbar";
+import actions from "../lib/actions";
 // import { useEffect, useState } from "react";
 
 function PersonalSite({ Component, pageProps }: AppProps) {
@@ -27,7 +28,12 @@ function PersonalSite({ Component, pageProps }: AppProps) {
         light: "light"
       }}
     >
-      <KBarProvider>
+      <KBarProvider
+        options={{
+          enableHistory: true
+        }}
+        actions={actions}
+      >
         <Component {...pageProps} />
       </KBarProvider>
     </ThemeProvider>
