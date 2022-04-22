@@ -1,10 +1,12 @@
+import { collection, getDocs } from "firebase/firestore";
+import { firestore } from "../firebase/clientApp";
 import Header from "../components/Header";
 import Input from "../components/Input";
 import Signature from "../components/Signature";
 import Text from "../components/Text";
 import Wrapper from "../components/Wrapper";
 
-const guestbook = () => {
+const guestbook = ({ entries }: any) => {
   return (
     <>
       <Wrapper>
@@ -21,10 +23,27 @@ const guestbook = () => {
           <Input />
         </div>
         <div className="mt-10" />
-
-        <Signature name="nexxel" message="lol" />
+        {entries.map((entry: any, index: number) => {
+          return (
+            <Signature key={index} name={entry.name} message={entry.message} />
+          );
+        })}{" "}
       </Wrapper>
     </>
   );
 };
+
+export async function getStaticProps() {
+  const guestbookRef = collection(firestore, "guestbook");
+  const data = await getDocs(guestbookRef);
+  const entries = data.docs.map((doc) => ({ ...doc.data(), id: doc.id }));
+
+  return {
+    props: {
+      entries
+    },
+    revalidate: 60
+  };
+}
+
 export default guestbook;
