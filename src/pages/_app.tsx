@@ -1,7 +1,10 @@
 import "../styles/globals.css";
+import "../styles/nprogress.css";
 import "@fontsource/barlow";
 import type { AppProps } from "next/app";
+import { Router } from "next/router";
 import { ThemeProvider } from "next-themes";
+import NProgress from "nprogress";
 import { KBarProvider } from "kbar";
 import CommandPalette from "../components/CommandPalette";
 import actions from "../lib/actions";
@@ -20,6 +23,12 @@ function PersonalSite({ Component, pageProps }: AppProps) {
   // if (typeof window === "undefined") {
   //   return <></>;
   // } else {
+
+  NProgress.configure({ showSpinner: false });
+  Router.events.on("routeChangeStart", () => NProgress.start());
+  Router.events.on("routeChangeComplete", () => NProgress.done());
+  Router.events.on("routeChangeError", () => NProgress.done());
+
   return (
     <ThemeProvider
       attribute="class"
