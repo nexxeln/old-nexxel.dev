@@ -8,10 +8,27 @@ const Input = () => {
     message: ""
   });
 
+  const [error, setError] = useState("");
+
   const guestbookRef = collection(firestore, "guestbook");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (form.name.length === 0 || form.message.length === 0) {
+      setError("Please fill out all fields.");
+      return;
+    }
+
+    if (form.name.length > 50) {
+      setError("Name must be less than 50 characters.");
+      return;
+    }
+
+    if (form.message.length > 70) {
+      setError("Message must be less than 70 characters.");
+      return;
+    }
 
     await addDoc(guestbookRef, {
       name: form.name,
@@ -40,6 +57,7 @@ const Input = () => {
   return (
     <>
       <form onSubmit={(e) => handleSubmit(e)} className="w-full">
+        {error && <p className="pl-1 text-red-500">{error}</p>}
         <div className="flex items-center w-full text-sm text-black border-2 border-black rounded-md md:text-lg dark:text-white dark:border-gray-400">
           <input
             name="name"
