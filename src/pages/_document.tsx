@@ -1,16 +1,15 @@
+import { createGetInitialProps } from "@mantine/next";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
+const getInitialProps = createGetInitialProps();
+
 export default class PortfolioDocument extends Document {
+  static getInitialProps = getInitialProps;
+
   render() {
     return (
       <Html lang="en">
-        <Head>
-          {/* <link
-            href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&display=swap"
-            rel="stylesheet"
-            as="font"
-          /> */}
-        </Head>
+        <Head></Head>
         <body>
           <Main />
           <NextScript />
