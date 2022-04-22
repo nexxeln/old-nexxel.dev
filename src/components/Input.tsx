@@ -48,7 +48,7 @@ const Input = () => {
         <div className="mt-3" />
         <button
           type="submit"
-          className="px-4 py-2 text-teal-600 transition-all duration-300 border-2 border-teal-600 rounded-md hover:scale-[1.04]"
+          className="px-4 py-2 text-teal-600 transition-opacity duration-300 border-2 border-teal-600 rounded-md hover:opacity-100 opacity-90"
         >
           Sign
         </button>
