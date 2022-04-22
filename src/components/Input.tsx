@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { firestore } from "../firebase/clientApp";
+import { Button } from "@mantine/core";
 
 const Input = () => {
   const [form, setForm] = useState({
@@ -21,25 +22,26 @@ const Input = () => {
       setLoading(false);
       setError("Please fill out all fields.");
       return;
-    } else if (form.name.length > 50) {
+    }
+    if (form.name.length > 50) {
       setLoading(false);
       setError("Name must be less than 50 characters.");
       return;
-    } else if (form.message.length > 70) {
+    }
+    if (form.message.length > 70) {
       setLoading(false);
       setError("Message must be less than 70 characters.");
       return;
-    } else {
-      await addDoc(guestbookRef, {
-        name: form.name,
-        message: form.message,
-        createdAt: serverTimestamp()
-      });
-
-      setLoading(false);
-      resetForm();
-      location.reload();
     }
+    await addDoc(guestbookRef, {
+      name: form.name,
+      message: form.message,
+      createdAt: serverTimestamp()
+    });
+
+    setLoading(false);
+    resetForm();
+    location.reload();
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -79,12 +81,9 @@ const Input = () => {
           />
         </div>
         <div className="mt-3" />
-        <button
-          type="submit"
-          className="px-4 py-2 text-teal-600 transition-opacity duration-300 border-2 border-teal-600 rounded-md hover:opacity-100 opacity-80"
-        >
+        <Button type="submit" variant="outline" color="cyan" loading={loading}>
           Sign
-        </button>
+        </Button>
       </form>
     </>
   );
