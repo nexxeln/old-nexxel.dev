@@ -6,7 +6,7 @@ const LoginWithGoogle = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   return (
     <>
-      {error && <p>{error.message}</p>}
+      {error && <p className="pb-1 text-red">{error.message}</p>}
       <Button
         variant="outline"
         color="cyan"
