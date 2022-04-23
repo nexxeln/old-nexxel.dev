@@ -1,9 +1,9 @@
 import { useState } from "react";
+import { User } from "firebase/auth";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { firestore } from "../firebase/clientApp";
 import { Button } from "@mantine/core";
 import Logout from "./Logout";
-import { User } from "firebase/auth";
 
 type InputProps = {
   user?: User;
@@ -65,7 +65,8 @@ const Input = ({ user }: InputProps) => {
         <p className="pt-2 text-sm text-gray-500 dark:text-gray-400">
           - {name}
         </p>
-        <div className="flex mt-3" />
+        <div className="flex" />
+        <div className="pb-2" />
         <Button
           type="submit"
           variant="outline"

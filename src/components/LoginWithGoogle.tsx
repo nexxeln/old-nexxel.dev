@@ -1,6 +1,7 @@
 import { Button } from "@mantine/core";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { auth } from "../firebase/clientApp";
+import Privacy from "./Privacy";
 
 const LoginWithGoogle = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -16,10 +17,7 @@ const LoginWithGoogle = () => {
       >
         Login to comment
       </Button>
-      <p className="pt-1 text-sm text-gray-400 dark:text-gray-500">
-        Your information is only used to display your name to avoid
-        impersonation.
-      </p>
+      <Privacy />
     </>
   );
 };
