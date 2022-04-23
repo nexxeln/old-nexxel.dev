@@ -1,5 +1,6 @@
 import { NextPage } from "next";
 import Head from "next/head";
+import Header from "../components/Header";
 import Wrapper from "../components/Wrapper";
 
 const stats: NextPage = () => {
@@ -15,7 +16,7 @@ const stats: NextPage = () => {
         />
       </Head>
       <Wrapper>
-        <h1>stats</h1>
+        <Header head="Stats" size={5} />
       </Wrapper>
     </>
   );
