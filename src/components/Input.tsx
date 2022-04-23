@@ -3,15 +3,17 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { firestore } from "../firebase/clientApp";
 import { Button } from "@mantine/core";
 import Logout from "./Logout";
+import { User } from "firebase/auth";
 
-const Input = () => {
-  const [form, setForm] = useState({
-    name: "",
-    message: ""
-  });
+type InputProps = {
+  user?: User;
+};
 
+const Input = ({ user }: InputProps) => {
+  const [message, setMessage] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const name = user?.displayName || user?.email?.split("@")[0];
 
   const guestbookRef = collection(firestore, "guestbook");
 
@@ -19,44 +21,31 @@ const Input = () => {
     e.preventDefault();
     setLoading(true);
 
-    if (form.name.length === 0 || form.message.length === 0) {
+    if (message.length === 0) {
       setLoading(false);
-      setError("Please fill out all fields.");
+      setError("Your message is empty!");
       return;
     }
-    if (form.name.length > 50) {
-      setLoading(false);
-      setError("Name must be less than 50 characters.");
-      return;
-    }
-    if (form.message.length > 70) {
+
+    if (message.length > 70) {
       setLoading(false);
       setError("Message must be less than 70 characters.");
       return;
     }
+
     await addDoc(guestbookRef, {
-      name: form.name,
-      message: form.message,
+      name: name,
+      message: message,
       createdAt: serverTimestamp()
     });
 
     setLoading(false);
-    resetForm();
+    setMessage("");
     location.reload();
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setForm({
-      ...form,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const resetForm = () => {
-    setForm({
-      name: "",
-      message: ""
-    });
+    setMessage(e.target.value);
   };
 
   return (
@@ -65,22 +54,17 @@ const Input = () => {
         {error && <p className="pl-1 text-red-500">{error}</p>}
         <div className="flex items-center w-full text-sm text-black border-2 border-black rounded-md md:text-lg dark:text-white dark:border-gray-400">
           <input
-            name="name"
-            type="text"
-            className="w-[30%] px-4 py-2 border-r-2 border-black rounded-l-md focus:outline-none dark:bg-zinc-900 dark:border-gray-400 placeholder:text-gray-400 dark:placeholder:text-gray-300"
-            placeholder="Your name"
-            value={form.name}
-            onChange={handleChange}
-          />
-          <input
             name="message"
             type="text"
-            className="w-[70%] px-4 py-2 rounded-r-md focus:outline-none placeholder:text-gray-400 dark:placeholder:text-gray-300 dark:bg-zinc-900"
+            className="w-[70%] px-4 py-2 rounded-md focus:outline-none placeholder:text-gray-400 dark:placeholder:text-gray-300 dark:bg-zinc-900"
             placeholder="Your message..."
-            value={form.message}
+            value={message}
             onChange={handleChange}
           />
         </div>
+        <p className="pt-2 text-sm text-gray-500 dark:text-gray-400">
+          - {name}
+        </p>
         <div className="flex mt-3" />
         <Button
           type="submit"

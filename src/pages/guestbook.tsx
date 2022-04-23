@@ -38,7 +38,7 @@ const guestbook: NextPage = ({ entries }: any) => {
 
         {user ? (
           <div className="mt-6">
-            <Input />
+            <Input user={user} />
           </div>
         ) : (
           <div className="mt-6">
