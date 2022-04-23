@@ -12,7 +12,7 @@ const LoginWithGoogle = () => {
         color="cyan"
         loading={loading}
         onClick={() => {
-          signInWithGoogle;
+          signInWithGoogle();
         }}
       >
         Login with google
