@@ -11,9 +11,7 @@ const LoginWithGoogle = () => {
         variant="subtle"
         color="cyan"
         loading={loading}
-        onClick={() => {
-          signInWithGoogle();
-        }}
+        onClick={() => signInWithGoogle()}
       >
         Login with google
       </Button>
