@@ -56,7 +56,7 @@ const Input = ({ user }: InputProps) => {
           <input
             name="message"
             type="text"
-            className="w-[70%] px-4 py-2 rounded-md focus:outline-none placeholder:text-gray-400 dark:placeholder:text-gray-300 dark:bg-zinc-900"
+            className="w-full px-4 py-2 rounded-md focus:outline-none placeholder:text-gray-400 dark:placeholder:text-gray-300 dark:bg-zinc-900"
             placeholder="Your message..."
             value={message}
             onChange={handleChange}
