@@ -15,6 +15,7 @@ export default async function handler(
     img: artist.images[1]
   }));
 
+  // cache for 1 day
   res.setHeader(
     "Cache-Control",
     "public, s-maxage=86400, stale-while-revalidate=43200"
