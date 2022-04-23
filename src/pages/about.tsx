@@ -190,7 +190,7 @@ const about: NextPage = () => {
                       rel="noreferrer"
                       target="_blank"
                     >
-                      Firbase
+                      Firebase
                     </a>
                   </li>
 
