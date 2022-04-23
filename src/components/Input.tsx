@@ -72,7 +72,7 @@ const Input = ({ user }: InputProps) => {
           variant="outline"
           color="cyan"
           loading={loading}
-          className="transition-colors duration-300 dark:hover:bg-gray-700"
+          className="transition-colors duration-300 dark:hover:bg-gray-800"
         >
           Sign
         </Button>

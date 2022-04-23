@@ -12,7 +12,7 @@ const LoginWithGoogle = () => {
         variant="outline"
         color="cyan"
         loading={loading}
-        className="transition-colors duration-300 dark:hover:bg-gray-700"
+        className="transition-colors duration-300 dark:hover:bg-gray-800"
         onClick={() => signInWithGoogle()}
       >
         Login to comment

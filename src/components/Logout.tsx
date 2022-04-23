@@ -9,7 +9,7 @@ const Logout = () => {
         variant="outline"
         color="cyan"
         ml={8}
-        className="transition-colors duration-300 dark:hover:bg-gray-700"
+        className="transition-colors duration-300 dark:hover:bg-gray-800"
         onClick={() => signOut(auth)}
       >
         Log Out
