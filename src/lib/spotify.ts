@@ -1,22 +1,31 @@
-import fetch from "isomorphic-unfetch";
-import querystring from "querystring";
+export type SpotifyTrack = {
+  name: string;
+  artists: { name: string }[];
+  external_urls: { spotify: string };
+};
 
-const client_id = process.env.SPOTIFY_CLIENT_ID;
-const client_secret = process.env.SPOTIFY_CLIENT_SECRET;
-const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
-
-const basic = Buffer.from(`${client_id}:${client_secret}`).toString("base64");
-const TOP_TRACKS_ENDPOINT = `https://api.spotify.com/v1/me/top/tracks?time_range=short_term`;
-const TOKEN_ENDPOINT = `https://accounts.spotify.com/api/token`;
+export type SpotifyArtist = {
+  name: string;
+  images: { url: string }[];
+  external_urls: { spotify: string };
+  followers: { total: number };
+};
 
 const getAccessToken = async () => {
-  const response = await fetch(TOKEN_ENDPOINT, {
+  const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
+  const clientId = process.env.SPOTIFY_CLIENT_ID;
+  const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
+
+  const response = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",
     headers: {
-      Authorization: `Basic ${basic}`,
+      Authorization: `Basic ${Buffer.from(
+        `${clientId}:${clientSecret}`
+      ).toString("base64")}`,
       "Content-Type": "application/x-www-form-urlencoded"
     },
-    body: querystring.stringify({
+    // @ts-ignore
+    body: new URLSearchParams({
       grant_type: "refresh_token",
       refresh_token
     })
@@ -25,10 +34,20 @@ const getAccessToken = async () => {
   return response.json();
 };
 
-export const getTopTracks = async () => {
+export const topTracks = async () => {
   const { access_token } = await getAccessToken();
 
-  return fetch(TOP_TRACKS_ENDPOINT, {
+  return fetch("https://api.spotify.com/v1/me/top/tracks", {
+    headers: {
+      Authorization: `Bearer ${access_token}`
+    }
+  });
+};
+
+export const topArtists = async () => {
+  const { access_token } = await getAccessToken();
+
+  return fetch("https://api.spotify.com/v1/me/top/artists", {
     headers: {
       Authorization: `Bearer ${access_token}`
     }
