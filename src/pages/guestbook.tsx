@@ -1,14 +1,18 @@
+import type { NextPage } from "next";
+import Head from "next/head";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
-import { firestore } from "../firebase/clientApp";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth, firestore } from "../firebase/clientApp";
 import Header from "../components/Header";
 import Input from "../components/Input";
 import Signature from "../components/Signature";
 import Text from "../components/Text";
 import Wrapper from "../components/Wrapper";
-import { NextPage } from "next";
-import Head from "next/head";
+import LoginWithGoogle from "../components/LoginWithGoogle";
 
 const guestbook: NextPage = ({ entries }: any) => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [user, loading, error] = useAuthState(auth);
   return (
     <>
       <Head>
@@ -24,15 +28,24 @@ const guestbook: NextPage = ({ entries }: any) => {
         <div className="pb-3">
           <Header head="Guestbook" size={5} />
         </div>
+
         <Text>
           <div className="text-lg">
             Leave a comment below to sign my Guestbook. It could literally be
             anything - a joke, a quote or even a cool fact. Surprise me!
           </div>
         </Text>
-        <div className="mt-6">
-          <Input />
-        </div>
+
+        {user ? (
+          <div className="mt-6">
+            <Input user={user} />
+          </div>
+        ) : (
+          <div className="mt-6">
+            <LoginWithGoogle />
+          </div>
+        )}
+
         <div className="mt-10" />
         {entries.map((entry: any, index: number) => {
           return (
