@@ -186,11 +186,11 @@ const about: NextPage = () => {
                     </a>{" "}
                     and{" "}
                     <a
-                      href="https://firebase.google.com/docs/firestore"
+                      href="https://firebase.google.com"
                       rel="noreferrer"
                       target="_blank"
                     >
-                      Firestore
+                      Firbase
                     </a>
                   </li>
 
