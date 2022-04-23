@@ -2,6 +2,7 @@ import { useState } from "react";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { firestore } from "../firebase/clientApp";
 import { Button } from "@mantine/core";
+import Logout from "./Logout";
 
 const Input = () => {
   const [form, setForm] = useState({
@@ -80,10 +81,17 @@ const Input = () => {
             onChange={handleChange}
           />
         </div>
-        <div className="mt-3" />
-        <Button type="submit" variant="outline" color="cyan" loading={loading}>
+        <div className="flex mt-3" />
+        <Button
+          type="submit"
+          variant="outline"
+          color="cyan"
+          loading={loading}
+          className="transition-colors duration-300 dark:hover:bg-gray-700"
+        >
           Sign
         </Button>
+        <Logout />
       </form>
     </>
   );

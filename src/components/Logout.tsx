@@ -5,7 +5,13 @@ import { auth } from "../firebase/clientApp";
 const Logout = () => {
   return (
     <>
-      <Button variant="default" onClick={() => signOut(auth)}>
+      <Button
+        variant="outline"
+        color="cyan"
+        ml={8}
+        className="transition-colors duration-300 dark:hover:bg-gray-700"
+        onClick={() => signOut(auth)}
+      >
         Log Out
       </Button>
     </>
