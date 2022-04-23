@@ -1,16 +1,3 @@
-export type SpotifyTrack = {
-  name: string;
-  artists: { name: string }[];
-  external_urls: { spotify: string };
-};
-
-export type SpotifyArtist = {
-  name: string;
-  images: { url: string }[];
-  external_urls: { spotify: string };
-  followers: { total: number };
-};
-
 const getAccessToken = async () => {
   const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
   const clientId = process.env.SPOTIFY_CLIENT_ID;
@@ -34,7 +21,7 @@ const getAccessToken = async () => {
   return response.json();
 };
 
-export const topTracks = async () => {
+const topTracks = async () => {
   const { access_token } = await getAccessToken();
 
   return fetch("https://api.spotify.com/v1/me/top/tracks", {
@@ -44,7 +31,7 @@ export const topTracks = async () => {
   });
 };
 
-export const topArtists = async () => {
+const topArtists = async () => {
   const { access_token } = await getAccessToken();
 
   return fetch("https://api.spotify.com/v1/me/top/artists", {
@@ -53,3 +40,19 @@ export const topArtists = async () => {
     }
   });
 };
+
+type SpotifyTrack = {
+  name: string;
+  artists: { name: string }[];
+  external_urls: { spotify: string };
+};
+
+type SpotifyArtist = {
+  name: string;
+  images: { url: string }[];
+  external_urls: { spotify: string };
+  followers: { total: number };
+};
+
+export { topTracks, topArtists };
+export type { SpotifyTrack, SpotifyArtist };
