@@ -50,7 +50,6 @@ const Intro: FC = () => {
       variants={anims.FadeContainer}
       initial="hidden"
       animate="visible"
-      exit={{opacity : 0, x : 0, y : 20}}
     >
       <motion.div
         variants={anims.FadeContainer}
