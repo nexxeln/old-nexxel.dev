@@ -29,13 +29,15 @@ const Artist: FC<{ artist: fetchers.SpotifyArtist }> = ({ artist }) => {
   return (
     <Link href={artist.url} passHref>
       <a className="flex stats-styles" rel="noreferrer" target="_blank">
-        <Image
-          src={artist.img.url}
-          height={100}
-          width={100}
-          alt={artist.name}
-          className="rounded-full"
-        />
+        <div className="px-4 py-2">
+          <Image
+            src={artist.img.url}
+            height={100}
+            width={100}
+            alt={artist.name}
+            className="rounded-full"
+          />
+        </div>
         <div className="flex flex-col items-start justify-center ml-5">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
             {artist.name}
@@ -49,7 +51,7 @@ const Artist: FC<{ artist: fetchers.SpotifyArtist }> = ({ artist }) => {
   );
 };
 
-const Tracks = () => {
+const Tracks: FC = () => {
   const { data } = useSWR("/api/stats/tracks", fetchers.trackFetcher);
 
   return (
@@ -62,7 +64,7 @@ const Tracks = () => {
   );
 };
 
-const Artists = () => {
+const Artists: FC = () => {
   const { data } = useSWR("/api/stats/artists", fetchers.artistFetcher);
 
   return (
