@@ -29,7 +29,7 @@ const Artist: FC<{ artist: fetchers.SpotifyArtist }> = ({ artist }) => {
   return (
     <Link href={artist.url} passHref>
       <a className="flex stats-styles" rel="noreferrer" target="_blank">
-        <div className="px-4 py-2">
+        <div className="px-5 pt-4 pb-2">
           <Image
             src={artist.img.url}
             height={100}
