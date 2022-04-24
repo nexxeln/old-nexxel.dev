@@ -8,6 +8,7 @@ import NProgress from "nprogress";
 import { KBarProvider } from "kbar";
 import { MantineProvider } from "@mantine/core";
 import CommandPalette from "../components/CommandPalette";
+import { AnimatePresence } from 'framer-motion';
 import actions from "../lib/actions";
 // import { useEffect, useState } from "react";
 
@@ -47,7 +48,9 @@ function PersonalSite({ Component, pageProps }: AppProps) {
           actions={actions}
         >
           <CommandPalette />
-          <Component {...pageProps} />
+          <AnimatePresence exitBeforeEnter initial={true}>
+            <Component {...pageProps} />
+          </AnimatePresence>
         </KBarProvider>
       </MantineProvider>
     </ThemeProvider>
