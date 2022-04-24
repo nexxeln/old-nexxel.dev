@@ -1,10 +1,10 @@
 import { FC } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import useSWR from "swr";
 import { motion } from "framer-motion";
 import * as fetchers from "../lib/fetcher";
 import * as anims from "../animations/index";
-import Image from "next/image";
 import Header from "./Header";
 
 const Track: FC<{ track: fetchers.SpotifyTrack }> = ({ track }) => {
@@ -12,7 +12,7 @@ const Track: FC<{ track: fetchers.SpotifyTrack }> = ({ track }) => {
     <Link href={track.url} passHref>
       <a
         href={track.url}
-        className="p-5 transition-colors duration-200 border border-gray-20 bg-gray-50 hover:bg-gray-200 dark:bg-zinc-900 dark:border-zinc-700 dark:hover:bg-zinc-800"
+        className="p-5 stats-styles"
         rel="noreferrer"
         target="_blank"
       >
@@ -28,11 +28,7 @@ const Track: FC<{ track: fetchers.SpotifyTrack }> = ({ track }) => {
 const Artist: FC<{ artist: fetchers.SpotifyArtist }> = ({ artist }) => {
   return (
     <Link href={artist.url} passHref>
-      <a
-        className="flex p-5 transition-colors duration-200 border border-gray-20 bg-gray-50 hover:bg-gray-200 dark:bg-zinc-900 dark:border-zinc-700 dark:hover:bg-zinc-800"
-        rel="noreferrer"
-        target="_blank"
-      >
+      <a className="flex stats-styles" rel="noreferrer" target="_blank">
         <Image
           src={artist.img.url}
           height={100}
@@ -79,12 +75,14 @@ const Artists = () => {
   );
 };
 
-const Music: FC<{
-  data: fetchers.SpotifyTrack[] | fetchers.SpotifyArtist[];
+type MusicProps = {
+  data: fetchers.SpotifyArtist[] | fetchers.SpotifyTrack[];
   title: string;
   description: string;
   tracks: boolean;
-}> = ({ data, title, description, tracks }) => {
+};
+
+const Music: FC<MusicProps> = ({ data, title, description, tracks }) => {
   return (
     <motion.div
       className="flex flex-col mt-24"
