@@ -44,5 +44,9 @@ body {
 }
 
 .text {
-  @apply prose text-gray-600 dark:text-gray-400 md:prose-lg lg:prose-xl dark:prose-invert prose-a:no-underline prose-a:font-medium hover:prose-a:underline hover:prose-a:underline-offset-2 hover:prose-a:transition-all hover:prose-a:duration-300
+  @apply prose text-gray-600 dark:text-gray-400 md:prose-lg lg:prose-xl dark:prose-invert prose-a:no-underline prose-a:font-medium hover:prose-a:underline hover:prose-a:underline-offset-2 hover:prose-a:transition-all hover:prose-a:duration-300;
+}
+
+.stats-styles {
+  @apply transition-colors duration-200 border border-gray-200 bg-gray-50 hover:bg-gray-200 dark:bg-zinc-900 dark:border-zinc-700 dark:hover:bg-zinc-800;
 }

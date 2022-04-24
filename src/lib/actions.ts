@@ -1,4 +1,4 @@
-import { Action, useRegisterActions } from "kbar";
+import { Action } from "kbar";
 
 const actions: Action[] = [
   {
@@ -22,12 +22,12 @@ const actions: Action[] = [
     section: "Navigation"
   },
   {
-    id: "blog",
-    name: "Blog",
-    shortcut: ["b"],
-    keywords: "articles",
+    id: "stats",
+    name: "Stats",
+    shortcut: ["s"],
+    keywords: "statistics spotify",
     perform: () => {
-      open("https://blog.nexxel.dev", "_self");
+      open("/stats", "_self");
     },
     section: "Navigation"
   },
@@ -42,6 +42,16 @@ const actions: Action[] = [
     section: "Navigation"
   },
   {
+    id: "blog",
+    name: "Blog",
+    keywords: "articles",
+    perform: () => {
+      open("https://blog.nexxel.dev", "_blank");
+    },
+    section: "External Links",
+    subtitle: "Read my blog posts"
+  },
+  {
     id: "github",
     name: "GitHub",
     keywords: "gh code",
@@ -50,6 +60,16 @@ const actions: Action[] = [
     },
     section: "External Links",
     subtitle: "View my open-source projects"
+  },
+  {
+    id: "discord",
+    name: "Discord",
+    keywords: "dc message dm",
+    perform: () => {
+      open("https://discord.com/users/758578599715405824", "_blank");
+    },
+    section: "External Links",
+    subtitle: "Chat with me on Discord"
   }
 ];
 
