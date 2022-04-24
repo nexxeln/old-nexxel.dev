@@ -53,7 +53,7 @@ const Tracks = () => {
   const { data } = useSWR("/api/stats/tracks", fetchers.trackFetcher);
 
   return (
-    <Music
+    <Card
       data={data!}
       title="My Top Tracks"
       description="My favourite genres are rap and punk. I also listen to some hyperpop and rock."
@@ -66,7 +66,7 @@ const Artists = () => {
   const { data } = useSWR("/api/stats/artists", fetchers.artistFetcher);
 
   return (
-    <Music
+    <Card
       data={data!}
       title="My Top Artists"
       description="Powfu is <3"
@@ -75,14 +75,14 @@ const Artists = () => {
   );
 };
 
-type MusicProps = {
+type CardProps = {
   data: fetchers.SpotifyArtist[] | fetchers.SpotifyTrack[];
   title: string;
   description: string;
   tracks: boolean;
 };
 
-const Music: FC<MusicProps> = ({ data, title, description, tracks }) => {
+const Card: FC<CardProps> = ({ data, title, description, tracks }) => {
   return (
     <motion.div
       className="flex flex-col mt-24"
