@@ -8,7 +8,7 @@ const stats: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Shoubhit Dash | 404</title>
+        <title>Shoubhit Dash | Stats</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta
