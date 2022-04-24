@@ -5,13 +5,14 @@ import { motion } from "framer-motion";
 import * as fetchers from "../lib/fetcher";
 import * as anims from "../animations/index";
 import Image from "next/image";
+import Header from "./Header";
 
 const Track: FC<{ track: fetchers.SpotifyTrack }> = ({ track }) => {
   return (
     <Link href={track.url} passHref>
       <a
         href={track.url}
-        className="p-5 border border-gray-200 bg-gray-50 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 dark:border-gray-700"
+        className="p-5 transition-colors duration-200 border border-gray-20 bg-gray-50 hover:bg-gray-200 dark:bg-zinc-900 dark:border-zinc-700 dark:hover:bg-zinc-800"
         rel="noreferrer"
         target="_blank"
       >
@@ -28,7 +29,7 @@ const Artist: FC<{ artist: fetchers.SpotifyArtist }> = ({ artist }) => {
   return (
     <Link href={artist.url} passHref>
       <a
-        className="flex p-5 border border-gray-200 bg-gray-50 hover:bg-gray-200 dark:bg-gray-900 dark:hover:bg-gray-800 dark:border-gray-700"
+        className="flex p-5 transition-colors duration-200 border border-gray-20 bg-gray-50 hover:bg-gray-200 dark:bg-zinc-900 dark:border-zinc-700 dark:hover:bg-zinc-800"
         rel="noreferrer"
         target="_blank"
       >
@@ -91,8 +92,11 @@ const Music: FC<{
       initial="hidden"
       animate="visible"
     >
-      <motion.h1 variants={anims.Fade}>{title}</motion.h1>
-      <motion.p className="mt-5 text-lg" variants={anims.Fade}>
+      <Header head={title} size={4} />
+      <motion.p
+        className="mt-5 text-lg text-gray-500 dark:text-gray-400"
+        variants={anims.Fade}
+      >
         {description}
       </motion.p>
       <motion.div
