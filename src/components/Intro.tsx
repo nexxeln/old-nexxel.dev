@@ -82,12 +82,12 @@ const Intro: FC = () => {
           className="items-center hidden mt-10 mr-20 text-xl text-gray-600 dark:text-gray-400 sm:flex"
           variants={anims.Fade}
         >
-          <div
+          <span
             onClick={query.toggle}
-            className="transition-colors duration-300 cursor-pointer hover:text-amber-500 hover:animate-bounce"
+            className="transition-all duration-300 cursor-pointer hover:text-amber-500 hover:scale-110"
           >
             <RiLightbulbLine size={21} />
-          </div>
+          </span>
           &nbsp; Tip: Use
           <button
             onClick={query.toggle}
