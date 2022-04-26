@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useKBar } from "kbar";
 import { FiGithub, FiMail } from "react-icons/fi";
+import { RiLightbulbLine } from "react-icons/ri";
 import * as anims from "../animations/index";
 import Wavy from "../animations/Wavy";
 
@@ -78,10 +79,16 @@ const Intro: FC = () => {
         </motion.p>
 
         <motion.p
-          className="hidden mt-10 mr-20 text-xl text-gray-600 dark:text-gray-400 sm:flex"
+          className="items-center hidden mt-10 mr-20 text-xl text-gray-600 dark:text-gray-400 sm:flex"
           variants={anims.Fade}
         >
-          Pro Tip: Use
+          <div
+            onClick={query.toggle}
+            className="transition-colors duration-300 cursor-pointer hover:text-amber-500 hover:animate-bounce"
+          >
+            <RiLightbulbLine size={21} />
+          </div>
+          &nbsp; Tip: Use
           <button
             onClick={query.toggle}
             style={{ opacity: 1 }}
