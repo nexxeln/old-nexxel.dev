@@ -12,11 +12,21 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC, remixBlog }: any) => {
       <Head>
         <title>Shoubhit Dash | Home</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        <meta name="title" content="Shoubhit Dash | Home" />
         <meta
           name="description"
-          content="Shoubhit Dash aka nexxel's personal website."
+          content="Shoubhit Dash aka nexxel's personal website"
         />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nexxel.dev/" />
+        <meta property="og:title" content="Shoubhit Dash | Home" />
+        <meta
+          property="og:description"
+          content="Shoubhit Dash aka nexxel's personal website"
+        />
+        <meta property="og:image" content="/nexxel.jpg" />
       </Head>
       <Wrapper>
         <Intro />

@@ -18,11 +18,21 @@ const guestbook: NextPage = ({ entries }: any) => {
       <Head>
         <title>Shoubhit Dash | Guestbook</title>
         <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        <meta name="title" content="Shoubhit Dash | Guestbook" />
         <meta
           name="description"
-          content="Shoubhit Dash aka nexxel's personal website."
+          content="Shoubhit Dash aka nexxel's personal website"
         />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://nexxel.dev/" />
+        <meta property="og:title" content="Shoubhit Dash | Guestbook" />
+        <meta
+          property="og:description"
+          content="Shoubhit Dash aka nexxel's personal website"
+        />
+        <meta property="og:image" content="/nexxel.jpg" />
       </Head>
       <Wrapper>
         <div className="pb-3">
