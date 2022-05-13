@@ -62,12 +62,10 @@ const Input = ({ user }: InputProps) => {
             onChange={handleChange}
           />
         </div>
-        <p className="flex justify-end items-end pr-2 text-sm">
+        <p className="flex justify-end items-end pr-2 pt-1 text-sm">
           {message.length}/100
         </p>
-        <p className="pt-2 text-sm text-gray-500 dark:text-gray-400">
-          - {name}
-        </p>
+        <p className="text-sm text-gray-500 dark:text-gray-400">- {name}</p>
         <div className="flex" />
         <div className="pb-2" />
         <Button
