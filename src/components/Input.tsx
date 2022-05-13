@@ -27,9 +27,9 @@ const Input = ({ user }: InputProps) => {
       return;
     }
 
-    if (message.length > 70) {
+    if (message.length > 100) {
       setLoading(false);
-      setError("Message must be less than 70 characters.");
+      setError("Message must be less than 100 characters.");
       return;
     }
 
@@ -62,6 +62,9 @@ const Input = ({ user }: InputProps) => {
             onChange={handleChange}
           />
         </div>
+        <p className="flex justify-end items-end pr-2 text-sm">
+          {message.length}/100
+        </p>
         <p className="pt-2 text-sm text-gray-500 dark:text-gray-400">
           - {name}
         </p>
