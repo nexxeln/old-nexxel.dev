@@ -10,8 +10,7 @@ const stats: NextPage = () => {
       <Head>
         <title>Shoubhit Dash | Stats</title>
         <link rel="icon" href="/favicon.ico" />
-        <title>Shoubhit Dash | Guestbook</title>
-        <meta name="title" content="Shoubhit Dash | Guestbook" />
+        <meta name="title" content="Shoubhit Dash | Stats" />
         <meta
           name="description"
           content="Shoubhit Dash aka nexxel's personal website"
@@ -19,7 +18,7 @@ const stats: NextPage = () => {
 
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://nexxel.dev/" />
-        <meta property="og:title" content="Shoubhit Dash | Guestbook" />
+        <meta property="og:title" content="Shoubhit Dash | Stats" />
         <meta
           property="og:description"
           content="Shoubhit Dash aka nexxel's personal website"
