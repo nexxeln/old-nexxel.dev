@@ -10,6 +10,7 @@ const stats: NextPage = () => {
       <Head>
         <title>Shoubhit Dash | Stats</title>
         <link rel="icon" href="/favicon.ico" />
+
         <meta name="title" content="Shoubhit Dash | Stats" />
         <meta
           name="description"
