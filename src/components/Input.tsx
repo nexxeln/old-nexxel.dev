@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { User } from "firebase/auth";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { firestore } from "../firebase/clientApp";
 import { Button } from "@mantine/core";
+import { firestore } from "../firebase/clientApp";
 import Logout from "./Logout";
 
 type InputProps = {
