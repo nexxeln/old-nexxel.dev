@@ -67,7 +67,7 @@ const Intro: FC = () => {
         <Wavy
           text="Highschooler and Developer"
           heading="p"
-          className="mt-11 md:mt-3 mb-10 text-xl text-gray-900 dark:text-white"
+          className="mb-10 text-xl text-gray-900 mt-11 md:mt-3 dark:text-white"
         />
 
         <motion.p
