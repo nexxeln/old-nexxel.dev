@@ -16,6 +16,7 @@ specifiers:
   firebase: ^9.6.11
   framer-motion: ^6.3.0
   grapheme-splitter: ^1.0.4
+  jotai: ^1.6.7
   kbar: ^0.1.0-beta.34
   next: 12.1.5
   next-themes: ^0.1.1
@@ -39,6 +40,7 @@ dependencies:
   firebase: 9.8.1
   framer-motion: 6.3.3_zpnidt7m3osuk7shl3s4oenomq
   grapheme-splitter: 1.0.4
+  jotai: 1.6.7_react@18.0.0
   kbar: 0.1.0-beta.34_zpnidt7m3osuk7shl3s4oenomq
   next: 12.1.5_zpnidt7m3osuk7shl3s4oenomq
   next-themes: 0.1.1_dtzmyspcyj3erncazrhasijzmy
@@ -2575,6 +2577,43 @@ packages:
   /isexe/2.0.0:
     resolution: {integrity: sha1-6PvzdNxVb/iUehDcsFctYz8s+hA=}
     dev: true
+
+  /jotai/1.6.7_react@18.0.0:
+    resolution: {integrity: sha512-MxAm86FYHm6asU3O1hbTKOWpPMP5oI8zNlgFRpZBB85cX79psF2eRb7ZqdGewOgYUUUKAlzZ+sH0IM7Pea6MkA==}
+    engines: {node: '>=12.7.0'}
+    peerDependencies:
+      '@babel/core': '*'
+      '@babel/template': '*'
+      '@urql/core': '*'
+      immer: '*'
+      optics-ts: '*'
+      react: '>=16.8'
+      react-query: '*'
+      valtio: '*'
+      wonka: '*'
+      xstate: '*'
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      '@babel/template':
+        optional: true
+      '@urql/core':
+        optional: true
+      immer:
+        optional: true
+      optics-ts:
+        optional: true
+      react-query:
+        optional: true
+      valtio:
+        optional: true
+      wonka:
+        optional: true
+      xstate:
+        optional: true
+    dependencies:
+      react: 18.0.0
+    dev: false
 
   /js-tokens/4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}

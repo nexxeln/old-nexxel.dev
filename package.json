@@ -20,6 +20,7 @@
     "firebase": "^9.6.11",
     "framer-motion": "^6.3.0",
     "grapheme-splitter": "^1.0.4",
+    "jotai": "^1.6.7",
     "kbar": "^0.1.0-beta.34",
     "next": "12.1.5",
     "next-themes": "^0.1.1",
