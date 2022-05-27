@@ -6,7 +6,7 @@ import ProjectCard from "../components/ProjectCard";
 import ViewMoreBtn from "../components/ViewMoreBtn";
 import Wrapper from "../components/Wrapper";
 
-const Home: NextPage = ({ nexdle, genLicense, spotifyVC, remixBlog }: any) => {
+const Home: NextPage = ({ nexdle, genLicense, spotifyVC, deoxys }: any) => {
   return (
     <>
       <Head>
@@ -62,12 +62,12 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC, remixBlog }: any) => {
             align="left"
           />
           <ProjectCard
-            name={remixBlog.name}
-            language={remixBlog.language}
-            description={remixBlog.description}
-            forks={remixBlog.forks}
-            stars={remixBlog.stargazers_count}
-            link={remixBlog.name}
+            name={deoxys.name}
+            language={deoxys.language}
+            description={deoxys.description}
+            forks={deoxys.forks}
+            stars={deoxys.stargazers_count}
+            link={deoxys.name}
             align="right"
           />
           <div className="self-center">
@@ -98,8 +98,8 @@ export async function getStaticProps() {
     return await res.json();
   });
 
-  const remixBlog = await fetch(
-    "https://api.github.com/repos/nexxeln/remix-blog"
+  const deoxys = await fetch(
+    "https://api.github.com/repos/nexxeln/deoxys"
   ).then(async (res) => {
     return await res.json();
   });
@@ -109,7 +109,7 @@ export async function getStaticProps() {
       nexdle,
       genLicense,
       spotifyVC,
-      remixBlog
+      deoxys
     },
     revalidate: 60
   };
