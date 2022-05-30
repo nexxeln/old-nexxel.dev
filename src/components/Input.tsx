@@ -33,6 +33,12 @@ const Input = ({ user }: InputProps) => {
       return;
     }
 
+    if (!message.replace(/\s/g, "").length) {
+      setLoading(false);
+      setError("Your message contains only whitespaces!");
+      return;
+    }
+
     await addDoc(guestbookRef, {
       name: name,
       message: message,
