@@ -207,7 +207,7 @@ const about: NextPage = () => {
                   <li>
                     Everything is in{" "}
                     <a
-                      href="https://typescript.org"
+                      href="https://typescriptlang.org"
                       rel="noreferrer"
                       target="_blank"
                     >
