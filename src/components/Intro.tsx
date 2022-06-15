@@ -74,7 +74,7 @@ const Intro: FC = () => {
           className="mr-20 text-xl text-gray-600 dark:text-gray-400"
           variants={anims.Fade}
         >
-          16 yo self-taught developer, trying to make the world a cooler place{" "}
+          17 yo self-taught developer, trying to make the world a cooler place{" "}
           and stuff like that
         </motion.p>
 
