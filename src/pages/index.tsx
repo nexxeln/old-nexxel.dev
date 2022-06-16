@@ -6,7 +6,12 @@ import ProjectCard from "../components/ProjectCard";
 import ViewMoreBtn from "../components/ViewMoreBtn";
 import Wrapper from "../components/Wrapper";
 
-const Home: NextPage = ({ nexdle, genLicense, spotifyVC, deoxys }: any) => {
+const Home: NextPage = ({
+  nexdle,
+  genLicense,
+  spotifyVC,
+  createt3App
+}: any) => {
   return (
     <>
       <Head>
@@ -62,12 +67,12 @@ const Home: NextPage = ({ nexdle, genLicense, spotifyVC, deoxys }: any) => {
             align="left"
           />
           <ProjectCard
-            name={deoxys.name}
-            language={deoxys.language}
-            description={deoxys.description}
-            forks={deoxys.forks}
-            stars={deoxys.stargazers_count}
-            link={deoxys.name}
+            name={createt3App.name}
+            language={createt3App.language}
+            description={createt3App.description}
+            forks={createt3App.forks}
+            stars={createt3App.stargazers_count}
+            link={createt3App.name}
             align="right"
           />
           <div className="self-center">
@@ -98,8 +103,8 @@ export async function getStaticProps() {
     return await res.json();
   });
 
-  const deoxys = await fetch(
-    "https://api.github.com/repos/nexxeln/deoxys"
+  const createt3App = await fetch(
+    "https://api.github.com/repos/nexxeln/create-t3-app"
   ).then(async (res) => {
     return await res.json();
   });
@@ -109,7 +114,7 @@ export async function getStaticProps() {
       nexdle,
       genLicense,
       spotifyVC,
-      deoxys
+      createt3App
     },
     revalidate: 60
   };
