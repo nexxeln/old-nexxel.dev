@@ -26,7 +26,8 @@
     "react-firebase-hooks": "^5.0.3",
     "react-icons": "^4.3.1",
     "react-spring": "^9.4.4",
-    "swr": "^1.3.0"
+    "swr": "^1.3.0",
+    "use-last-fm": "^0.6.1"
   },
   "devDependencies": {
     "@types/node": "17.0.24",

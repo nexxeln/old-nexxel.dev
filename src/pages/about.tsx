@@ -161,6 +161,10 @@ const about: NextPage = () => {
                 <ul>
                   <li>
                     Heavily inspired by{" "}
+                    <a href="https://hxrsh.in" rel="noreferrer" target="_blank">
+                      Harsh Singh&apos;s
+                    </a>{" "}
+                    and{" "}
                     <a
                       href="https://leerob.io"
                       rel="noreferrer"
